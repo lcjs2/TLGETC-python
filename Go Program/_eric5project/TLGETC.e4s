@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Session SYSTEM "Session-4.4.dtd">
+<!-- eric5 session file for project TLGETC -->
+<!-- This file was generated automatically, do not edit. -->
+<!-- Saved: 2012-08-06, 16:01:30 -->
+<Session version="4.4">
+  <Filenames>
+    <Filename cline="486" cindex="34" folds="" zoom="0">C:\Users\Lloyd\Go Program\gameState.py</Filename>
+    <Filename cline="84" cindex="62" folds="14,149,150,151,154,157,158,189,191,195,196,197,200,209,233,234,236,238,239,240,242,247,253,273,275,276,281,285,290,291,294,297,300,302,303,307,308,439,451,458,459,472,474,476,479,481,483,486,488,495,497,498,500,504,505,507,510" zoom="0">C:\Users\Lloyd\Go Program\BetterBot.py</Filename>
+    <Filename cline="68" cindex="0" folds="" zoom="0">C:\Users\Lloyd\Go Program\drawBoard.py</Filename>
+    <Filename cline="117" cindex="0" folds="" zoom="0">C:\Users\Lloyd\Go Program\BetterBot_capturing.py</Filename>
+    <Filename cline="39" cindex="5" folds="" zoom="0">C:\Users\Lloyd\Go Program\Go.py</Filename>
+  </Filenames>
+  <ActiveWindow cline="39" cindex="5">C:\Users\Lloyd\Go Program\Go.py</ActiveWindow>
+  <Breakpoints/>
+  <Watchexpressions/>
+  <DebugInfo>
+    <CommandLine></CommandLine>
+    <WorkingDirectory></WorkingDirectory>
+    <Environment></Environment>
+    <ReportExceptions value="True"/>
+    <Exceptions/>
+    <IgnoredExceptions/>
+    <AutoClearShell value="True"/>
+    <TracePython value="False"/>
+    <AutoContinue value="True"/>
+    <CovexcPattern/>
+  </DebugInfo>
+  <Bookmarks/>
+</Session>
