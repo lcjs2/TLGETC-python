@@ -1,4 +1,5 @@
 import random
+
 class RandomBot(object):
     def __init__(self):
         pass

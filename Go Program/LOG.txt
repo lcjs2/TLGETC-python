@@ -1,0 +1,24 @@
+##################################
+#  Tue Oct 16 01:56:34 EDT 2012  #
+##################################
+
+*Merged the bots into one file:
+	*HumanBot (removed from \
+		drawboard.py)
+	*RandomBot
+	*BetterBot
+	*BetterBot_Capturing
+*Made a "constants" file
+*Changed the name of "drawBoard" \
+	to "gui" (seemed more\
+	 accurate)
+*Pushed the "usefulFunctions" from\
+		 Go.py to  gui.py
+*Moved the game play sequence out\
+	of Go.py and replaced it\
+	 with a function gui.play() 
+*MISC contains stuff I didn't\
+	 understand.
+
+##################################
+##################################

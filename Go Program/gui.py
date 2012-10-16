@@ -1,21 +1,18 @@
-from Go import *
+import sys
+import time
+import random
+import cProfile
+from constants import *
+from bots import *
+import pygame
+from pygame.locals import *
 
+pygame.init()
 
 debug=True
 
-boardColour = (230,200,130)
-panelColour = (180,180,180)
-
-font = pygame.font.Font(pygame.font.match_font('couriernew',  'timesnewroman',  'arial'), 14)
-fontSmall = pygame.font.Font(pygame.font.match_font('couriernew',  'timesnewroman',  'arial'), 10)
-
-boardWidth=600
-panelWidth=200
 stoneWidth=5
 board=0
-margin=50
-DISPLAYSURF = pygame.display.set_mode((boardWidth+panelWidth, boardWidth))
-pygame.display.set_caption('The Little Go Engine That Could')
 
 def redraw(game,  players=[0, 0],  drawDebug=False):
     global board
@@ -127,29 +124,42 @@ def playerNumber(colour):
         return 0
     else:
         return 1
-    
-class HumanBot(object):
-    def __init__(self):
-        pass
 
-    def getName(self):
-        return 'Human'
-    
-    def getMove(self,  game):
-        pygame.event.get()#clear waiting events
-        while True:
-            for event in pygame.event.get():
-                if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == MOUSEBUTTONDOWN:
-                    mousex, mousey = event.pos
-                    if isOnBoard(mousex,mousey):
-                        i, j = getBoardCoordinates(mousex,mousey)
-                        if game.isLegalMove(i,j):
-                            return (i,j) 
-                    if mousex>boardWidth and mousey>boardWidth-100: #detect pass
-                        return (-1, -1)
-    
-    def debugDraw(self, game):
-        pass
+#Useful functions
+def waitForClick():
+	clicked=False
+	while clicked==False:
+		for event in pygame.event.get():
+			if event.type==MOUSEBUTTONDOWN:
+				clicked=True
+
+def waitForKey():
+	clicked=False
+	while clicked==False:
+		for event in pygame.event.get():
+			if event.type==KEYDOWN:
+				clicked=True
+def play(game, players):
+    passCounter=0
+    while passCounter<2:
+        print('Thinking...')
+        (i, j) = players[playerNumber(game.move)].getMove(game)
+        #print('Engine selected ',  (i, j))
+        if False: #player control of engine moves
+            redraw(game,  players)
+            print('Engine selected ',  (i, j), '. Waiting for human choice...')
+            (i, j)=HumanBot().getMove(game)
+        
+        if (i, j)==(-1, -1):
+            passCounter+=1
+        else:
+            passCounter=0
+        
+        
+        redraw(game, players,  True)
+        print('Engine selected: ',  (i, j),  ' based on this board')
+        #waitForKey()
+        game.makeMove(i, j,  False)
+        redraw(game, players)
+        #time.sleep(0.5)
+        #waitForKey() 
