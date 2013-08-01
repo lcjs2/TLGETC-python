@@ -1,6 +1,9 @@
+
+########    gameState    ########
+
 import copy
-BLACK=(0, 0, 0)
-WHITE=(255, 255, 255)
+from constants import *
+
 
 #Adding stones must only be done through makeMove
 #In paticular, group constructor assumes only one stone is in the new group
@@ -9,17 +12,17 @@ WHITE=(255, 255, 255)
 
 class group(object): #Group of solidly connected stones
     def __init__(self, stones, colour):
-        self.colour=colour
+        self.colour = colour
         self.stones = stones #list of tuples
         self.length = len(stones)
         self.liberties = 4
         self.merged = False #should not be touched after this is set to True
-        self.left=self.stones[0][0] #assume only one stone when initialised! 
-        self.right=self.stones[0][0]
-        self.top=self.stones[0][1]
-        self.bottom=self.stones[0][1]
-        self.toCapture=set()
-        self.toEscape=set()
+        self.left = self.stones[0][0] #assume only one stone when initialised! 
+        self.right = self.stones[0][0]
+        self.top = self.stones[0][1]
+        self.bottom = self.stones[0][1]
+        self.toCapture = set()
+        self.toEscape = set()
         
  
 

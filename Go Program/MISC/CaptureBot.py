@@ -5,6 +5,7 @@ import random
 #THIS CODE IS FROZEN
 #STOP FIDDLING WITH THIS CRAP
 #WRITE SOMETHING BETTER INSTEAD
+# lol  -JJ
 
 class CaptureBot(object):
     def __init__(self):
